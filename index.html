@@ -45,12 +45,12 @@
             if (sender === 'user') {
                 messageElement.classList.add('text-end');
                 bubble.classList.add('bg-primary', 'text-white', 'd-inline-block');
+                bubble.textContent = message; // Use textContent for user input for security
             } else {
                 messageElement.classList.add('text-start');
                 bubble.classList.add('bg-light', 'text-dark', 'd-inline-block');
+                bubble.innerHTML = message; // Use innerHTML for bot responses to render HTML
             }
-
-            bubble.textContent = message;
             messageElement.appendChild(bubble);
             chatBox.appendChild(messageElement);
 
